@@ -109,7 +109,7 @@ yarn_prune_devdependencies() {
   else 
     local start=$(nowms)
     cd "$build_dir" 
-    yarn install --frozen-lockfile --ignore-engines --ignore-scripts --prefer-offline 2>&1
+    yarn install --frozen-lockfile --ignore-engines --ignore-scripts --prefer-offline --ignore-optional 2>&1
     mtime "prune.yarn.time" "${start}"
   fi
 }
